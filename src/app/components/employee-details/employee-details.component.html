@@ -1,0 +1,41 @@
+<form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-8 col-12">
+                <label for="employeeId">Employee ID:</label>
+                <input type="text" class="form-control" id="employeeId" [(ngModel)]="employeeId" name="employeeId">
+            </div>
+            <div class="col-md-4 col-12">
+                <br>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>      
+    </div>
+   
+  </form>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Salary</th>
+        <th>Annual Salary</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.employee_name }}</td>
+        <td>{{ employee.employee_age }}</td>
+        <td>{{ employee.employee_salary | currency}}</td>
+        <td>{{ employee.annual_salary | currency }}</td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+  
